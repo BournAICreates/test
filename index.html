@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modular CSS Design System</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <noscript>
+    <style>
+      [data-animate],
+      [data-entrance-animate],
+      [data-hover-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+    </style>
+  </noscript>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container flex justify-between items-center">
+      <a href="#" class="font-bold" style="font-size: var(--font-size-xl); color: var(--color-primary);">Brand</a>
+      <div class="hidden-mobile">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="hidden-desktop"> <!-- Mobile Menu Icon Placeholder -->
+        <button class="btn btn-secondary">Menu</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section bg-light text-center">
+    <div class="container">
+      <h1 class="mb-4" data-entrance-animate="slide-up" data-entrance-delay="0">Modern Digital Solutions</h1>
+      <p class="text-gray mb-8 will-animate" style="font-size: var(--font-size-lg); max-width: 600px; margin-left: auto; margin-right: auto;" data-entrance-animate="fade-in" data-entrance-delay="200">
+        We build responsive, accessible, and performant web experiences using a modular CSS architecture.
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="#contact" class="btn btn-primary transition-smooth will-animate" data-hover-animate="lift" data-entrance-animate="slide-up" data-entrance-delay="400">Get Started</a>
+        <a href="#portfolio" class="btn btn-secondary transition-smooth will-animate" data-hover-animate="lift" data-entrance-animate="slide-up" data-entrance-delay="500">View Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="text-center mb-8" data-animate="fade-in">
+        <h2 class="text-primary">Our Services</h2>
+        <p class="text-gray">What we can do for you</p>
+      </div>
+      
+      <div class="grid grid-3-cols" data-animate="stagger">
+        <!-- Service Card 1 -->
+        <div class="card will-animate" data-stagger-item data-hover-animate="lift">
+          <div class="card-image" style="background-color: #e0f2fe;"></div>
+          <h3 class="card-title">Web Development</h3>
+          <p class="card-content">Building fast and scalable websites using modern technologies.</p>
+          <div class="card-footer">
+            <a href="#" class="text-primary font-semibold transition-smooth">Learn more &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="card will-animate" data-stagger-item data-hover-animate="lift">
+          <div class="card-image" style="background-color: #d1fae5;"></div>
+          <h3 class="card-title">UI/UX Design</h3>
+          <p class="card-content">Creating intuitive and beautiful user interfaces that convert.</p>
+          <div class="card-footer">
+            <a href="#" class="text-primary font-semibold transition-smooth">Learn more &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="card will-animate" data-stagger-item data-hover-animate="lift">
+          <div class="card-image" style="background-color: #fef3c7;"></div>
+          <h3 class="card-title">SEO Optimization</h3>
+          <p class="card-content">Improving your visibility on search engines to drive traffic.</p>
+          <div class="card-footer">
+            <a href="#" class="text-primary font-semibold transition-smooth">Learn more &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section bg-light">
+    <div class="container">
+      <div class="text-center mb-8" data-animate="fade-in">
+        <h2>Selected Portfolio</h2>
+        <p class="text-gray">Check out our latest projects</p>
+      </div>
+
+      <div class="grid grid-2-cols" data-animate="stagger">
+        <!-- Portfolio Item 1 -->
+        <div class="card will-animate" data-stagger-item data-hover-animate="lift" data-parallax="0.3">
+          <div class="card-image" style="height: 300px; background-color: #cbd5e1;"></div>
+          <h3 class="card-title">E-commerce Platform</h3>
+          <p class="card-content">A full-featured online store with payment integration and inventory management.</p>
+          <div class="flex gap-4 mt-4">
+            <span class="text-xs font-bold text-primary bg-white p-1 rounded">React</span>
+            <span class="text-xs font-bold text-primary bg-white p-1 rounded">Node.js</span>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 2 -->
+        <div class="card will-animate" data-stagger-item data-hover-animate="lift" data-parallax="0.5">
+          <div class="card-image" style="height: 300px; background-color: #cbd5e1;"></div>
+          <h3 class="card-title">Finance Dashboard</h3>
+          <p class="card-content">Real-time data visualization tool for financial markets.</p>
+          <div class="flex gap-4 mt-4">
+            <span class="text-xs font-bold text-primary bg-white p-1 rounded">Vue</span>
+            <span class="text-xs font-bold text-primary bg-white p-1 rounded">D3.js</span>
+          </div>
+        </div>
+
+         <!-- Portfolio Item 3 -->
+         <div class="card will-animate" data-stagger-item data-hover-animate="lift" data-parallax="0.3">
+          <div class="card-image" style="height: 300px; background-color: #cbd5e1;"></div>
+          <h3 class="card-title">Social Network App</h3>
+          <p class="card-content">Mobile-first social platform for connecting communities.</p>
+          <div class="flex gap-4 mt-4">
+            <span class="text-xs font-bold text-primary bg-white p-1 rounded">Flutter</span>
+            <span class="text-xs font-bold text-primary bg-white p-1 rounded">Firebase</span>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 4 -->
+        <div class="card will-animate" data-stagger-item data-hover-animate="lift" data-parallax="0.5">
+          <div class="card-image" style="height: 300px; background-color: #cbd5e1;"></div>
+          <h3 class="card-title">Booking System</h3>
+          <p class="card-content">Automated booking and scheduling system for clinics.</p>
+          <div class="flex gap-4 mt-4">
+            <span class="text-xs font-bold text-primary bg-white p-1 rounded">Python</span>
+            <span class="text-xs font-bold text-primary bg-white p-1 rounded">Django</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="section bg-dark text-white">
+    <div class="container grid grid-4-cols" data-animate="fade-in">
+      <div data-stagger-item>
+        <h4 class="mb-4">Brand</h4>
+        <p class="text-gray">Making the web better, one pixel at a time.</p>
+      </div>
+      <div data-stagger-item>
+        <h5 class="mb-4">Links</h5>
+        <ul class="text-gray">
+          <li><a href="#" class="text-gray hover:text-white transition-smooth">Home</a></li>
+          <li><a href="#" class="text-gray hover:text-white transition-smooth">About</a></li>
+          <li><a href="#" class="text-gray hover:text-white transition-smooth">Services</a></li>
+        </ul>
+      </div>
+      <div data-stagger-item>
+        <h5 class="mb-4">Social</h5>
+        <ul class="text-gray">
+          <li><a href="#" class="text-gray hover:text-white transition-smooth">Twitter</a></li>
+          <li><a href="#" class="text-gray hover:text-white transition-smooth">LinkedIn</a></li>
+          <li><a href="#" class="text-gray hover:text-white transition-smooth">Instagram</a></li>
+        </ul>
+      </div>
+      <div data-stagger-item>
+        <h5 class="mb-4">Contact</h5>
+        <p class="text-gray">hello@example.com</p>
+      </div>
+    </div>
+    <div class="container text-center mt-8 text-gray font-size-sm">
+      &copy; 2023 Brand. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/animations.js"></script>
+</body>
+</html>
