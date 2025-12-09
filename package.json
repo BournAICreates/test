@@ -1,0 +1,29 @@
+{
+  "name": "framer-motion-animations",
+  "version": "1.0.0",
+  "description": "Website with Framer Motion animations and smooth page transitions",
+  "type": "module",
+  "main": "js/animations.js",
+  "scripts": {
+    "dev": "npm run build:watch",
+    "build": "npm run build:js",
+    "build:js": "node js/build.js",
+    "build:watch": "npm run build && npx chokidar 'js/**/*.js' -c 'npm run build'"
+  },
+  "keywords": [
+    "framer-motion",
+    "animations",
+    "web-design",
+    "accessibility"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "framer-motion": "^11.0.0"
+  },
+  "devDependencies": {},
+  "browserslist": [
+    "last 2 versions",
+    "not dead"
+  ]
+}

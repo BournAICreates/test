@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation System Demo - Framer Motion</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .demo-section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--color-light);
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .demo-item {
+      padding: 2rem;
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+
+    .code-block {
+      background: var(--color-dark);
+      color: #00ff00;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      text-align: left;
+    }
+
+    .animation-showcase {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      border-radius: var(--radius-lg);
+      margin: 2rem auto;
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <style>
+      [data-animate],
+      [data-entrance-animate],
+      [data-hover-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+    </style>
+  </noscript>
+
+  <!-- Header -->
+  <nav class="navbar">
+    <div class="container flex justify-between items-center">
+      <a href="index.html" class="font-bold" style="font-size: var(--font-size-xl); color: var(--color-primary);">Brand</a>
+      <div class="hidden-mobile">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="#entrance" class="nav-link">Entrance</a>
+        <a href="#scroll" class="nav-link">Scroll</a>
+        <a href="#hover" class="nav-link">Hover</a>
+        <a href="#parallax" class="nav-link">Parallax</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="section bg-light text-center">
+    <div class="container">
+      <h1 data-entrance-animate="slide-up" data-entrance-delay="0">Animation System Demo</h1>
+      <p class="text-gray" data-entrance-animate="fade-in" data-entrance-delay="200" style="max-width: 600px; margin: 1rem auto;">
+        Comprehensive demonstration of all animation features with accessibility support and graceful degradation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Entrance Animations Section -->
+  <section id="entrance" class="section demo-section">
+    <div class="container">
+      <div data-animate="fade-in">
+        <h2 class="text-primary mb-4">Entrance Animations (Page Load)</h2>
+        <p class="text-gray">These animations play when the page loads with staggered delays.</p>
+      </div>
+
+      <div class="demo-grid">
+        <div class="demo-item" data-entrance-animate="slide-up" data-entrance-delay="0">
+          <h3>Slide Up</h3>
+          <p>Slides up from bottom on load</p>
+          <div class="code-block">data-entrance-animate="slide-up"</div>
+        </div>
+
+        <div class="demo-item" data-entrance-animate="fade-in" data-entrance-delay="200">
+          <h3>Fade In</h3>
+          <p>Fades in with 200ms delay</p>
+          <div class="code-block">data-entrance-delay="200"</div>
+        </div>
+
+        <div class="demo-item" data-entrance-animate="slide-up" data-entrance-delay="400">
+          <h3>Staggered</h3>
+          <p>Part of entrance sequence</p>
+          <div class="code-block">data-entrance-delay="400"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll Animations Section -->
+  <section id="scroll" class="section demo-section">
+    <div class="container">
+      <div data-animate="fade-in">
+        <h2 class="text-primary mb-4">Scroll Reveal Animations</h2>
+        <p class="text-gray">Trigger animations when elements become visible during scroll.</p>
+      </div>
+
+      <div class="demo-grid">
+        <div class="demo-item will-animate" data-animate="fade-in">
+          <h3>Fade In</h3>
+          <p>Fades in as it enters viewport</p>
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"></div>
+          <div class="code-block">data-animate="fade-in"</div>
+        </div>
+
+        <div class="demo-item will-animate" data-animate="slide-up">
+          <h3>Slide Up</h3>
+          <p>Slides up into view</p>
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+          <div class="code-block">data-animate="slide-up"</div>
+        </div>
+
+        <div class="demo-item will-animate" data-animate="scale-in">
+          <h3>Scale In</h3>
+          <p>Scales from small to normal</p>
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></div>
+          <div class="code-block">data-animate="scale-in"</div>
+        </div>
+
+        <div class="demo-item will-animate" data-animate="slide-left">
+          <h3>Slide Left</h3>
+          <p>Slides in from the right</p>
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #ec4899, #be185d);"></div>
+          <div class="code-block">data-animate="slide-left"</div>
+        </div>
+
+        <div class="demo-item will-animate" data-animate="slide-right">
+          <h3>Slide Right</h3>
+          <p>Slides in from the left</p>
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);"></div>
+          <div class="code-block">data-animate="slide-right"</div>
+        </div>
+
+        <div class="demo-item will-animate" data-animate="slide-down">
+          <h3>Slide Down</h3>
+          <p>Slides down from top</p>
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #06b6d4, #0891b2);"></div>
+          <div class="code-block">data-animate="slide-down"</div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Stagger Animation Section -->
+  <section id="stagger" class="section demo-section">
+    <div class="container">
+      <div data-animate="fade-in">
+        <h2 class="text-primary mb-4">Staggered Animations</h2>
+        <p class="text-gray">Multiple children animate sequentially with automatic delays.</p>
+      </div>
+
+      <div data-animate="stagger">
+        <div class="demo-item will-animate" data-stagger-item>
+          <h3>Item 1</h3>
+          <p>First in sequence (0ms delay)</p>
+        </div>
+        <div class="demo-item will-animate" data-stagger-item>
+          <h3>Item 2</h3>
+          <p>Second in sequence (100ms delay)</p>
+        </div>
+        <div class="demo-item will-animate" data-stagger-item>
+          <h3>Item 3</h3>
+          <p>Third in sequence (200ms delay)</p>
+        </div>
+        <div class="demo-item will-animate" data-stagger-item>
+          <h3>Item 4</h3>
+          <p>Fourth in sequence (300ms delay)</p>
+        </div>
+      </div>
+
+      <div class="code-block" style="margin-top: 2rem;">
+&lt;div data-animate="stagger"&gt;
+  &lt;div data-stagger-item&gt;Item 1&lt;/div&gt;
+  &lt;div data-stagger-item&gt;Item 2&lt;/div&gt;
+  &lt;div data-stagger-item&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+      </div>
+    </div>
+  </section>
+
+  <!-- Hover Animations Section -->
+  <section id="hover" class="section demo-section">
+    <div class="container">
+      <div data-animate="fade-in">
+        <h2 class="text-primary mb-4">Hover Animations</h2>
+        <p class="text-gray">Interactive animations triggered on mouse hover.</p>
+      </div>
+
+      <div class="demo-grid">
+        <div class="card will-animate" data-hover-animate="lift">
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"></div>
+          <h3>Lift Effect</h3>
+          <p>Card lifts up on hover</p>
+          <div class="code-block">data-hover-animate="lift"</div>
+        </div>
+
+        <div class="card will-animate" data-hover-animate="scale">
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+          <h3>Scale Effect</h3>
+          <p>Card scales up on hover</p>
+          <div class="code-block">data-hover-animate="scale"</div>
+        </div>
+
+        <div class="card will-animate" data-hover-animate="glow">
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></div>
+          <h3>Glow Effect</h3>
+          <p>Card glows on hover</p>
+          <div class="code-block">data-hover-animate="glow"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Section -->
+  <section id="parallax" class="section demo-section">
+    <div class="container">
+      <div data-animate="fade-in">
+        <h2 class="text-primary mb-4">Parallax Effects</h2>
+        <p class="text-gray">Scroll-based transform effects with variable speed.</p>
+      </div>
+
+      <div style="margin-top: 4rem;">
+        <p class="text-gray">Scroll down to see parallax in action:</p>
+      </div>
+
+      <div class="demo-grid" style="margin-top: 6rem;">
+        <div class="card will-animate" data-parallax="0.3">
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"></div>
+          <h3>Slow Parallax (0.3)</h3>
+          <p>Subtle movement on scroll</p>
+          <div class="code-block">data-parallax="0.3"</div>
+        </div>
+
+        <div class="card will-animate" data-parallax="0.5">
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+          <h3>Medium Parallax (0.5)</h3>
+          <p>Moderate movement on scroll</p>
+          <div class="code-block">data-parallax="0.5"</div>
+        </div>
+
+        <div class="card will-animate" data-parallax="0.7">
+          <div class="animation-showcase" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></div>
+          <h3>Fast Parallax (0.7)</h3>
+          <p>Dramatic movement on scroll</p>
+          <div class="code-block">data-parallax="0.7"</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 8rem; padding: 4rem; background: var(--color-light); border-radius: var(--radius-lg);" data-parallax="0.2">
+        <p class="text-center text-gray">This entire section has a subtle parallax effect!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessibility Section -->
+  <section class="section demo-section">
+    <div class="container">
+      <div data-animate="fade-in">
+        <h2 class="text-primary mb-4">Accessibility Features</h2>
+        <p class="text-gray">The animation system respects user preferences.</p>
+      </div>
+
+      <div class="grid grid-2-cols">
+        <div class="card" data-animate="slide-up">
+          <h3>Prefers Reduced Motion</h3>
+          <p>If your OS has "Reduce Motion" enabled, all animations are automatically disabled for a better experience.</p>
+          <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--color-gray);">
+            Test by enabling in: System Preferences > Accessibility > Display > Reduce Motion (macOS) or Settings > Ease of Access (Windows)
+          </p>
+        </div>
+
+        <div class="card" data-animate="slide-up">
+          <h3>JavaScript Disabled</h3>
+          <p>If JavaScript is disabled, all elements gracefully degrade to their static state with full visibility and no animation delays.</p>
+          <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--color-gray);">
+            Test by disabling JavaScript in DevTools Settings > Rendering
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation Guide -->
+  <section class="section demo-section">
+    <div class="container">
+      <div data-animate="fade-in">
+        <h2 class="text-primary mb-4">Quick Implementation Guide</h2>
+      </div>
+
+      <div class="grid grid-2-cols" data-animate="stagger">
+        <div class="card" data-stagger-item>
+          <h3>1. Import Animations</h3>
+          <div class="code-block">&lt;script src="js/animations.js"&gt;&lt;/script&gt;</div>
+        </div>
+
+        <div class="card" data-stagger-item>
+          <h3>2. Add Attributes</h3>
+          <div class="code-block">&lt;div data-animate="fade-in"&gt;Content&lt;/div&gt;</div>
+        </div>
+
+        <div class="card" data-stagger-item>
+          <h3>3. Add CSS Classes</h3>
+          <div class="code-block">&lt;div class="will-animate"&gt;Content&lt;/div&gt;</div>
+        </div>
+
+        <div class="card" data-stagger-item>
+          <h3>4. Customize Timing</h3>
+          <div class="code-block">data-entrance-delay="200"
+data-parallax="0.5"</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: var(--color-light); border-radius: var(--radius-lg);" data-animate="fade-in">
+        <p style="margin: 0;">See <strong>ANIMATIONS.md</strong> for comprehensive documentation and examples.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="section bg-dark text-white">
+    <div class="container text-center">
+      <p>&copy; 2023 Animation System Demo. All rights reserved.</p>
+      <p style="margin-top: 1rem;"><a href="index.html" style="color: var(--color-primary);">Back to Main Site</a></p>
+    </div>
+  </footer>
+
+  <script src="js/animations.js"></script>
+</body>
+</html>
