@@ -10,15 +10,13 @@
     --color-primary: #2563eb;
     --color-primary-dark: #1d4ed8;
     --color-primary-light: #3b82f6;
-    --color-secondary: #0ea5e9;
-    --color-accent: #8b5cf6;
     --color-text: #1f2937;
     --color-text-light: #6b7280;
     --color-text-lighter: #9ca3af;
     --color-background: #ffffff;
-    --color-background-alt: #f9fafb;
-    --color-border: #e5e7eb;
-    --color-border-light: #f3f4f6;
+    --color-background-alt: #f8fafc;
+    --color-border: #e2e8f0;
+    --color-border-light: #f1f5f9;
     --color-success: #10b981;
     --color-warning: #f59e0b;
     --color-error: #ef4444;
@@ -281,7 +279,7 @@ a:focus {
 /* Hero Section */
 .hero {
     padding: var(--space-4xl) 0;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
     color: var(--color-background);
     min-height: 80vh;
     display: flex;
